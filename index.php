@@ -1,8 +1,9 @@
 <?php
 require 'app/Inlet.php';
 
-Api::route('/', function(){
-    echo 'hello world!';
-});
+// 需要开启openssl扩展
+if (!extension_loaded("openssl")) {
+    exit("Please open the openssl extension first.");
+}
 
 Api::start();

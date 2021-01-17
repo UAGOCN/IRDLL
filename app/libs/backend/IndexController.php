@@ -189,7 +189,7 @@ class IndexController extends BaseController{
                         exit();
                     }
                     $dbData = Api::fun()->getDB()->field('user_id,user_name,user_session,user_logintime')->where(array('user_email'=>$inEmail))->limit(1)->select('user');
-                    if(!empty($dbData)&&trim($dbData[0]['user_session'])===$toKCode&&(trim($dbData[0]['user_logintime'])+86400)>time()) {
+                    if(!empty($dbData[0])&&trim($dbData[0]['user_session'])===$toKCode&&(trim($dbData[0]['user_logintime'])+86400)>time()) {
                         Api::fun()->getDB()->where(array('user_id'=>$dbData[0]['user_id']))->update('user',array('user_pwd'=>md5($loginpwd),'user_lock'=>md5($loginpwd),'user_session'=>md5(Api::request()->cookies[Api::fun()->getSessionName()]),'user_del'=>0,'user_ip'=>trim(Api::fun()->getSrt('ip',Api::request()->ip)),'user_logintime'=>time()));
                         Api::sess()->setSession('user',serialize(array(trim($dbData[0]['user_id']),trim($dbData[0]['user_name']),md5(Api::request()->cookies[Api::fun()->getSessionName()]))));
                         header('Location: /admin-index');

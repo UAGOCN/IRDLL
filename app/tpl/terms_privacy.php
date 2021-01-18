@@ -12,7 +12,6 @@
 <script src="{$site_url}/assets/jquery/jquery.min.js"></script>
 <script src="{$site_url}/assets/jquery/jquery.cookie.min.js"></script>
 <script src="{$site_url}/assets/bootstrap/bootstrap.min.js"></script>
-<noscript>你的浏览器没有打开JavaScript支持，无法正常使用本页面</noscript>
 </head>
 <body>
 

@@ -6,7 +6,6 @@
 <title>{$title}</title>
 {include('admin/_header.php')}
 
-<noscript>你的浏览器没有打开JavaScript支持，无法正常使用本页面</noscript>
 </head>
 <body>
 

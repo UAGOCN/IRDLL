@@ -12,7 +12,6 @@
 <script src="{$site_url}/assets/jquery/jquery.min.js" crossorigin="anonymous"></script>
 <script src="{$site_url}/assets/jquery/jquery.cookie.min.js" crossorigin="anonymous"></script>
 <script src="{$site_url}/assets/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
-<noscript>你的浏览器没有打开JavaScript支持，无法正常使用本页面</noscript>
 </head>
 <body>
 <h1><i class="fa fa-camera-retro" aria-hidden="true"></i>{$title}</h1>

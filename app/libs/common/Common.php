@@ -82,7 +82,7 @@ class Common extends app\Engine {
 
     // RSA 加密, 解密, 签名, 验签 返回JSON
     public function getRSA($id = 're', $data = false, $sign = false, $third = false) {
-        $this->loader->register('getRsaSrt', 'app\libs\common\ModeRsa',array(
+        $this->loader->register('getRsaSrt', '\app\libs\common\ModeRSA',array(
             $this->getDatas()['public.third'],
             $this->getDatas()['private'],
             (empty($third)?$this->getKey():$this->getKey($third)),
@@ -118,7 +118,7 @@ class Common extends app\Engine {
     // 设置数据库链接
     public function getDB($name = 'db') {
         if (!isset(self::$dbsInstances[$name])) {
-            $this->loader->register('getDbPdo', 'app\libs\common\MySQLPDO',array (
+            $this->loader->register('getDbPdo', '\app\libs\common\MySQLPDO',array (
                 $this->getDatas()[$name.'.host'],    // 数据库主机地址 默认='127.0.0.1'
                 $this->getDatas()[$name.'.user'],    // 数据库用户名
                 $this->getDatas()[$name.'.pass'],    // 数据库密码
@@ -172,7 +172,7 @@ class Common extends app\Engine {
 
     // 发送 SMTP 邮件
     public function getSMTP($email = null, $name = null, $Subject = null, $body = null) {
-        $this->loader->register('getSMTPPOP', 'app\libs\common\PHPMailer',array (TRUE));
+        $this->loader->register('getSMTPPOP', '\app\libs\common\PHPMailer',array (TRUE));
         try {
             // 服务器设置
             $this->getSMTPPOP()->SMTPDebug  = SMTP::DEBUG_OFF;                          // 启用详细调试输出
